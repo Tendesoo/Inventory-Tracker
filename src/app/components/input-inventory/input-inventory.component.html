@@ -1,0 +1,32 @@
+<app-sidenav></app-sidenav>
+<div class="img-fluid"></div>
+<div class="mask">
+<mat-card-header style="margin-left: 30px;">
+      <mat-card-title style="margin-left: 30px">Welcome to your Inventory tracker</mat-card-title>
+      <br>
+    </mat-card-header>
+  <div class="mt-5" style="margin-left: 30px;">
+  <form [formGroup]="userForm">
+      <div class="form-group">
+        <label for="exampleInputName"  class="field-label">Item
+          <span class="field-icon"><i class="fa fa-user"></i></span>
+        </label>
+        <br>
+        <input type="text" class="form-control" formControlName="itemName" placeholder="Enter the item" style="text-align:center">
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="exampleInputNumber">Price</label>
+        <br>
+        <input type="number" class="form-control" formControlName="price" placeholder="Enter the item price" style="text-align:center">
+      </div>
+     <br>
+      <button type="submit" class="btn btn-warning" (click)="addItem()">Add</button>&nbsp;
+      <button type="submit" class="btn btn-primary" (click)="reset()">Reset</button>
+    </form>
+  </div>
+</div>
+
+
+
+  

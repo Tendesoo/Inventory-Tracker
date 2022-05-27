@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box
+}
+body{
+    height: 100vh;
+    background: linear-gradient(
+        45deg,
+    #8b51ff,
+    #7a37ff
+    );
+}
+form{
+    background-color: #ffffff;
+    width: 450px;
+    padding: 50px 40px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left:50%;
+    border-radius: 8px;
+    box-shadow: 20px 20px 30px rgba( 0, 0 ,0 ,0.15);
+}
+h1{
+   color:  #6065D9;
+}
+button{
+    background-color: rgb(3, 170, 242);
+}
+.errormessage{
+    color:red
+}

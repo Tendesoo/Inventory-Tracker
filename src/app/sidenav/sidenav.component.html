@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+
+    <mat-toolbar>
+     <div class="spacer"></div>
+     <mat-icon>notifications</mat-icon>
+    <button mat-icon-button>
+       <mat-icon href="" routerLink="/login" routerLinkActivate='activate'>logout</mat-icon>
+      </button>
+    </mat-toolbar>
+    
+     
+      <mat-sidenav mode="side" opened class="sidenav">
+          <br>   <br>   <br>   <br>   <br>    <br>
+       
+      
+        <button  mat-button class="menu-button">
+          <mat-icon>content_copy</mat-icon>
+          <span >Business Profile</span>
+        </button>
+        <button  mat-button class="menu-button">
+          <mat-icon>group</mat-icon>
+          <span>Customers</span>
+        </button>
+        <button mat-raised-button type="submit" href="#" routerLink="/data" routerLinkActivate='activate'
+        mat-button class="menu-button">
+          <mat-icon>stacked_line_chart</mat-icon>
+          <span>Leads</span>
+        </button>
+    
+        <button href="#" routerLink="/user" routerLinkActivate='activate' mat-button class="menu-button">
+          <mat-icon>insert_drive_file</mat-icon>
+          <span>Packages</span>
+        </button>
+    
+        <button mat-button class="menu-button">
+          <mat-icon>attach_money
+          </mat-icon>
+          <span>Sales</span>
+        </button>
+    
+       
+    
+        <mat-divider></mat-divider>
+    
+        <button mat-button class="menu-button">
+          <mat-icon>format_list_bulleted</mat-icon>
+          <span>System Parameters</span>
+        </button>
+      </mat-sidenav>
+    </mat-sidenav-container>
