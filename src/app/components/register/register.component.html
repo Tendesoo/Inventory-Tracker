@@ -62,8 +62,11 @@
       <mat-label>url</mat-label>
       <input formControlName="url" type="text" matInput placeholder="placeholder">
     </mat-form-field>
-    <mat-error *ngIf="url.errors?.['urlValid']"class="errormessage">
-      <mat-icon>error_outline</mat-icon>URL IS INVALID
+    <mat-error *ngIf="f['url'].getError('required')!=null" class="errormessage">
+      <mat-icon>error_outline</mat-icon>Url is required
+    </mat-error>
+    <mat-error *ngIf="f['email'].getError('urlValidator')!=null" class="errormessage">
+      <mat-icon>error_outline</mat-icon>Your url is invalid
     </mat-error>
 
   <!-- PASSWORD -->

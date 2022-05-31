@@ -1,4 +1,148 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css' );
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+$body-color: #DBE0F9;
+$brand-primary: #6065D9;
+$brand-light-primary: #17D7FA;
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: $body-color;
+  font-family: 'Roboto', sans-serif;
+  .svg-top {
+    position: absolute;
+    top: -900px;
+    right: -300px;
+  }
+  .svg-bottom {
+    position: absolute;
+    bottom: -500px;
+    left: -200px;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+ 
+  .wrapper {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    width: 400px;
+   
+    z-index: 1;
+    mat-card-header {
+      margin-bottom: 40px;
+      
+      mat-card-title {
+        color: $brand-primary;
+        font-size: 35px;
+        font-weight: 500;
+        margin-bottom: 0;
+        margin-top: 40px;
+      }
+      p {
+        color: $brand-primary;
+        font-size: 18px;
+        font-weight: 300;
+        margin: 5px 0 0 0;
+      }
+    }
+    .main-content {
+      input {
+        border: none;
+        margin: 15px 0;
+        font-size: 18px;
+        color: #999;
+        &::placeholder {
+          color: #999;
+          font-size: 10px;
+          font-weight: 300;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        background: linear-gradient(to right, 
+        $brand-primary, $brand-light-primary);
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 300;
+        color: #fff;
+        display: block;
+        width: 100px;
+        height: 40px;
+        margin: 0 auto;
+        outline: none;
+        cursor: pointer;
+      }
+    }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 60px;
+      p {
+        margin: 0;
+        font-weight: 100;
+        a {
+          color: $brand-primary;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .wrapper {
+    margin: 0 10px !important;
+    padding: 30px;
+    header {
+      h1 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+.img-fluid {
+  /* The image used */
+  background-image: url("./assets/business.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.mask {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 40%;
+  padding: 20px;
+  text-align: center;
+}

@@ -13,8 +13,8 @@ export class RegisterComponent {
   constructor(private formBuilder: FormBuilder) {
     this.reactiveForm = this.formBuilder.group({
       username: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
-      email: new FormControl('', [Validators.email]),
-      url : new FormControl('', [urlValidator]),
+      email: new FormControl('', [Validators.required,Validators.email]),
+      url : new FormControl('', [Validators.required,urlValidator]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
       cnfrmPassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
     }, {
@@ -22,6 +22,9 @@ export class RegisterComponent {
     })
   }
   get f() { return this.reactiveForm.controls }
+  get url() {
+    return this.reactiveForm.get('url')
+  }
   Mustmatch(controlName: string, matchingControlName: string) {
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];
@@ -38,10 +41,10 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.reactiveForm.invalid) {
-      return;
+      alert('Please enter the correct url')
+      return false;
+    } else {
+      return alert('URL is valid')
     }
   }
-
-
-
 }
