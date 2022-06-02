@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { urlValidator } from 'src/app/validators/custom-validators';
+import { ApiService } from 'src/app/services/services/api.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { urlValidator } from 'src/app/validators/custom-validators';
 export class RegisterComponent {
 
   reactiveForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder ,private api: ApiService) {
     this.reactiveForm = this.formBuilder.group({
       username: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
       email: new FormControl('', [Validators.required,Validators.email]),
@@ -40,11 +41,12 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    if (this.reactiveForm.invalid) {
-      alert('Please enter the correct url')
-      return false;
-    } else {
-      return alert('URL is valid')
+    if (this.reactiveForm.invalid){
+      console.log(this.reactiveForm.value)
+      this.api.post('Users',this.reactiveForm.value).subscribe((res) => {
+        console.log(res)
+        alert('Registered')
+      })
     }
   }
 }

@@ -32,7 +32,7 @@ actionBtn: string ="Save";
   public addItem(){
    if (!this.editData){
     if(this.productForm.valid){
-      this.api.postProduct(this.productForm.value)
+      this.api.post('inventory',this.productForm.value)
       .subscribe({
         next:(res)=>{
           alert("Product added successfully")
@@ -49,7 +49,7 @@ actionBtn: string ="Save";
    }
     }
     updateProduct(){
-      this.api.putProduct(this.productForm.value , this.editData.id)
+      this.api.putProduct('Inventory',this.productForm.value ,this.editData.id)
       .subscribe({
         next:(res)=>{
           alert("Product updated successfully");

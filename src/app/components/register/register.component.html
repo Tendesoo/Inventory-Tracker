@@ -57,18 +57,6 @@
     <mat-icon>error_outline</mat-icon>Your email is invalid
   </mat-error>
 
-    <!-- url -->
-    <mat-form-field appearance="outline">
-      <mat-label>url</mat-label>
-      <input formControlName="url" type="text" matInput placeholder="placeholder">
-    </mat-form-field>
-    <mat-error *ngIf="f['url'].getError('required')!=null" class="errormessage">
-      <mat-icon>error_outline</mat-icon>Url is required
-    </mat-error>
-    <mat-error *ngIf="f['email'].getError('urlValidator')!=null" class="errormessage">
-      <mat-icon>error_outline</mat-icon>Your url is invalid
-    </mat-error>
-
   <!-- PASSWORD -->
   <mat-form-field appearance="outline">
     <mat-label>Password</mat-label>

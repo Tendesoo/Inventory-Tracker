@@ -23,8 +23,6 @@ export class DisplayInventoryComponent implements OnInit {
 
   items: Item[] = []
 
-  readonly ROOT_URL = 'https://62612d40f429c20deb9c1471.mockapi.io/inventory'
-
   displayedColumns: string[] = ['itemName', 'price' , 'action'];
   dataSource !: MatTableDataSource<any>;
 
@@ -48,9 +46,9 @@ export class DisplayInventoryComponent implements OnInit {
   }
 
   getAllProducts(){
-    this.api.getProduct()
+    this.api.getProduct('Inventory')
     .subscribe({
-      next:(res)=>{
+      next:(res)=>{'Inventory'
         this.dataSource = res
         console.log(res)
       },
@@ -70,7 +68,7 @@ export class DisplayInventoryComponent implements OnInit {
      })
   }
   deleteProduct(id:number){
-    this.api.deleteProduct(id).subscribe({
+    this.api.deleteProduct('Inventory' , id).subscribe({
       next:(res)=>{
         alert("Product Deleted Successfully")
         this.getAllProducts()

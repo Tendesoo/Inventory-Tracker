@@ -6,19 +6,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
+   baseUrl = "https://62612d40f429c20deb9c1471.mockapi.io/"
+
   constructor(private http:HttpClient) {}
 
-  postProduct(data:any){
-    return this.http.post<any>("https://62612d40f429c20deb9c1471.mockapi.io/inventory",data)
+  post(url : string ,data:any){
+    return this.http.post<any>(`${this.baseUrl}${url}`,data)
   }
 
-  getProduct(){
-    return  this.http.get<any>("https://62612d40f429c20deb9c1471.mockapi.io/inventory")
+  getProduct(url : string){
+    return  this.http.get<any>(`${this.baseUrl}${url}`)
   }
-  putProduct(data:any , id : number){
-    return this.http.put<any>("https://62612d40f429c20deb9c1471.mockapi.io/inventory/" +id ,data)
+  putProduct(url : string,data:any , id : number){
+    return this.http.put<any>(`${this.baseUrl}${url}` +id ,data)
   }
-   deleteProduct(id:number){
-     return this.http.delete<any>("https://62612d40f429c20deb9c1471.mockapi.io/inventory/" +id)
+   deleteProduct(url : string , id: number){
+     return this.http.delete<any>(`${this.baseUrl}${url}` +id)
    }
 }
