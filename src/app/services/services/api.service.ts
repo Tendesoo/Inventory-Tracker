@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getProduct(url : string){
-    return  this.http.get<any>(`${this.baseUrl}${url}`)
+    return  this.http.get<any>(`${this.baseUrl}${url}`, )
   }
   putProduct(url : string,data:any , id : number){
     return this.http.put<any>(`${this.baseUrl}${url}` +id ,data)

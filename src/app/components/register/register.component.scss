@@ -1,3 +1,6 @@
+
+$brand-primary: #6065D9;
+$brand-light-primary: #17D7FA;
 *,
 *::before,
 *::after{
@@ -27,8 +30,26 @@ form{
 h1{
    color:  #6065D9;
 }
-button{
-    background-color: rgb(3, 170, 242);
+button {
+    background: linear-gradient(to right, 
+    $brand-primary, $brand-light-primary);
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    color: #fff;
+    width: 100px;
+    height: 40px;
+    margin-right:80px;
+    outline: none;
+    justify-content: space-between;
+    
+  }
+  button:disabled{
+    background-color: gray;
+    opacity: 0.8;
+    color:white;
+    cursor: not-allowed;
 }
 .errormessage{
     color:red

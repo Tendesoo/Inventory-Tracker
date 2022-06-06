@@ -1,13 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+ import{environment} from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
 
-  constructor() { }
-}
-export interface stock{
-  id: number;
-  name: string;
+  baseUrl:any = environment.baseURL;
+
+  constructor(private http:HttpClient) { }
+
+  getUser(){
+    return this.http.get(this.baseUrl + 'Users');
+  }
 }

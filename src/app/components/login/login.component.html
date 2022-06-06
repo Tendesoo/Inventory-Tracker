@@ -33,37 +33,36 @@
   <section class="container">
     <section class="wrapper">
 <div class="bg-text">
-     
       <mat-card-header>
         <mat-card-title>Welcome back!</mat-card-title>
         <p>Please enter your login details</p>
       </mat-card-header>
       <section class="main-content">
    
-        <form class="example-form" >
+        <form class="example-form" [formGroup]="login" >
        <table class="example-full-width" cellspacing="2">
         <tr>
             <td>
        <mat-form-field class="example-full-width" >
-        <input matInput placeholder="Username"  [(ngModel)]="this.username" name="username" required >
+        <input matInput placeholder="Username" formControlName="name" >
         <mat-error><mat-icon>error_outline</mat-icon>Your username is required</mat-error>
          </mat-form-field>
         </td>
      </tr>
        <tr>
      <td><mat-form-field class="example-full-width">
-     <input matInput placeholder="Password" [(ngModel)]="this.password" type="password" name="password"
+     <input matInput placeholder="Password" formControlName="password" type="password"
        style="text-align:center" required>
      <mat-error><mat-icon>error_outline</mat-icon>Your password is required</mat-error>
    </mat-form-field></td>
      </tr></table>
-     <button  (click)="login()">Login</button>
+     <button (click)="loginSubmit(login.value)" [disabled]="login.invalid">Login</button>
      </form>
     </section>
 </div>
 <footer>
   <p><a href="" title="Forgot Password">Forgot Password?</a></p>
-  <p><a href="" routerLink="/register" routerLinkActivate='activate'>Register</a></p>
+  <p><a (click)=" gotToSignup()">Register</a></p>
 </footer>
     </section>
     </section>
