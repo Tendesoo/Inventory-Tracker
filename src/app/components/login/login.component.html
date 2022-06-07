@@ -39,12 +39,12 @@
       </mat-card-header>
       <section class="main-content">
    
-        <form class="example-form" [formGroup]="login" >
+        <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()" >
        <table class="example-full-width" cellspacing="2">
         <tr>
             <td>
        <mat-form-field class="example-full-width" >
-        <input matInput placeholder="Username" formControlName="name" >
+        <input matInput placeholder="Username" formControlName="username" >
         <mat-error><mat-icon>error_outline</mat-icon>Your username is required</mat-error>
          </mat-form-field>
         </td>
@@ -56,7 +56,7 @@
      <mat-error><mat-icon>error_outline</mat-icon>Your password is required</mat-error>
    </mat-form-field></td>
      </tr></table>
-     <button (click)="loginSubmit(login.value)" [disabled]="login.invalid">Login</button>
+     <button [disabled]="loginForm.invalid">Login</button>
      </form>
     </section>
 </div>

@@ -31,7 +31,7 @@
     </g>
   </svg>
 </div>
-<form (ngSubmit)="onSubmit()" [formGroup]="reactiveForm">
+<form  [formGroup]="reactiveForm">
   <h1> Thank you for Registering with us</h1>
 
   <!-- username -->
@@ -85,6 +85,6 @@
     <mat-icon>error_outline</mat-icon>Password mismatched
   </mat-error>
   <div>
-    <button  mat-raised-button>Register</button>
+    <button (ngSubmit)="onSubmit()" mat-raised-button>Register</button>
   </div>
 </form>
