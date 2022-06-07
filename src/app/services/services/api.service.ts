@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-   baseUrl = "https://62612d40f429c20deb9c1471.mockapi.io/"
+   baseUrl = "https://62612d40f429c20deb9c1471.mockapi.io/item/"
 
   constructor(private http:HttpClient) {}
 
@@ -18,9 +18,9 @@ export class ApiService {
     return  this.http.get<any>(`${this.baseUrl}${url}`, )
   }
   putProduct(url : string,data:any , id : number){
-    return this.http.put<any>(`${this.baseUrl}${url}` +id ,data)
+    return this.http.put<any>(`${this.baseUrl}${url}/${id}` ,data)
   }
    deleteProduct(url : string , id: number){
-     return this.http.delete<any>(`${this.baseUrl}${url}` +id)
+     return this.http.delete<any>(`${this.baseUrl}${url}/${id}`)
    }
 }

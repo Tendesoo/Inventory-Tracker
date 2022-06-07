@@ -46,9 +46,9 @@ export class DisplayInventoryComponent implements OnInit {
   }
 
   getAllProducts(){
-    this.api.getProduct('Inventory')
+    this.api.getProduct('inventory' , )
     .subscribe({
-      next:(res)=>{'Inventory'
+      next:(res)=>{'inventory'
         this.dataSource = res
         console.log(res)
       },
@@ -68,7 +68,7 @@ export class DisplayInventoryComponent implements OnInit {
      })
   }
   deleteProduct(id:number){
-    this.api.deleteProduct('Inventory' , id).subscribe({
+    this.api.deleteProduct('inventory' , id).subscribe({
       next:(res)=>{
         alert("Product Deleted Successfully")
         this.getAllProducts()

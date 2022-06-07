@@ -49,7 +49,7 @@ actionBtn: string ="Save";
    }
     }
     updateProduct(){
-      this.api.putProduct('Inventory',this.productForm.value ,this.editData.id)
+      this.api.putProduct('inventory',this.productForm.value ,this.editData.id)
       .subscribe({
         next:(res)=>{
           alert("Product updated successfully");
