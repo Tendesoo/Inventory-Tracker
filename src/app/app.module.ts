@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {MatCardModule} from '@angular/material/card';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { NgxPaginationModule } from 'ngx-pagination';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -29,9 +30,9 @@ import { LoginComponent } from './components/login/login.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { RegisterComponent } from './components/register/register.component';
-import { PasswordStrengthMeterComponent } from './components/password-strength-meter/password-strength-meter.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -42,15 +43,15 @@ import { ChildComponent } from './parent/child/child.component';
     SidenavComponent,
     DialogComponent,
     RegisterComponent,
-    PasswordStrengthMeterComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule,MatCardModule,FormsModule,MatInputModule,MatButtonModule,MatDialogModule,MatIconModule,
     AppRoutingModule,ReactiveFormsModule,MatFormFieldModule,MatCheckboxModule,MatToolbarModule,MatSidenavModule,
     BrowserAnimationsModule,MatMenuModule,MatProgressSpinnerModule,MatTableModule,HttpClientModule,MatDividerModule,
-    MatPaginatorModule,MatSortModule
+    MatPaginatorModule,MatSortModule,NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

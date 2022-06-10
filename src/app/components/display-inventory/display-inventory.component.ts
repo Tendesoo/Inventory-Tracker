@@ -22,15 +22,21 @@ export interface UserData {
 export class DisplayInventoryComponent implements OnInit {
 
   items: Item[] = []
+  // data: Item[] | null | undefined;
 
   displayedColumns: string[] = ['itemName', 'price' , 'action'];
-  dataSource !: MatTableDataSource<any>;
+  dataSource = new MatTableDataSource<any>(this.items);
+  @ViewChild(MatPaginator, { static: true })
+  paginator!: MatPaginator;
 
-  @ViewChild(MatPaginator) paginator !: MatPaginator;
   @ViewChild(MatSort) sort !: MatSort;
 
+
   constructor(private http: HttpClient ,private dialog:MatDialog , 
-     private api: ApiService ) {}
+     private api: ApiService ) {
+     
+
+     }
   openDialog(){
     this.dialog.open(DialogComponent,{
      width: '30%'
@@ -49,7 +55,8 @@ export class DisplayInventoryComponent implements OnInit {
     this.api.getProduct('inventory' , )
     .subscribe({
       next:(res)=>{'inventory'
-        this.dataSource = res
+      this.dataSource = new MatTableDataSource(res);
+        this.dataSource.paginator = this.paginator
         console.log(res)
       },
       error:(err)=>{
