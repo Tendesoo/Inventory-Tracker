@@ -1,13 +1,7 @@
-.mat-toolbar{
-    background:grey;
-    color:black;
-    font-size: 2.5rem;
-    flex: 1 1 auto;
-    margin-left: 0;
-}
+
 .mat-sidenav{
     height: 100%;
-    width:300px;
+    width:100%;
     border-right:none;
     background:grey;
     color: white;
@@ -21,7 +15,6 @@
     display:flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 1.8rem;
     top: 1
 }
     .mat-icon {

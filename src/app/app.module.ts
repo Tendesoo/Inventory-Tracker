@@ -18,6 +18,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {HttpClientModule} from '@angular/common/http'
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 
@@ -33,6 +35,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './parent/child/child.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -45,13 +48,14 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
     RegisterComponent,
     ParentComponent,
     ChildComponent,
-    PaginatorComponent
+    PaginatorComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,MatCardModule,FormsModule,MatInputModule,MatButtonModule,MatDialogModule,MatIconModule,
     AppRoutingModule,ReactiveFormsModule,MatFormFieldModule,MatCheckboxModule,MatToolbarModule,MatSidenavModule,
     BrowserAnimationsModule,MatMenuModule,MatProgressSpinnerModule,MatTableModule,HttpClientModule,MatDividerModule,
-    MatPaginatorModule,MatSortModule,NgxPaginationModule
+    MatPaginatorModule,MatSortModule,NgxPaginationModule, ScrollingModule, MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
