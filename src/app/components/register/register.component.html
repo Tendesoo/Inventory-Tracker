@@ -85,6 +85,10 @@
     <mat-icon>error_outline</mat-icon>Password mismatched
   </mat-error>
   <div>
-    <button  mat-raised-button>Register</button>
-  </div>
+    <mat-spinner *ngIf="seeSpinner" [diameter]="30"></mat-spinner>
+    <button  mat-raised-button >Register</button>
+  </div> 
+  <br>
+  <p><a href="#"routerLink='' > Click to return to login page </a></p>
 </form>
+ 

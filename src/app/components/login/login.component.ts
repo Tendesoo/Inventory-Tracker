@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 export class LoginComponent implements OnInit {
 loginForm!: FormGroup;
 users:any = [];
+showSpinner = false;
 
   constructor( private router: Router , private fb:FormBuilder , private http:HttpClient) { }
 
@@ -39,11 +40,17 @@ users:any = [];
       },err =>{
         alert("Server not available")
       })
+      this.showSpinner = true;
+      setTimeout(() => {
+        this.showSpinner = false; 
+      } , 3000)
     }
 
     gotToSignup(){
       this.router.navigate(['register']);
     }
+
+
     }
     
 

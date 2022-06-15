@@ -1,18 +1,36 @@
-mat-error{
-    font-size: 1.4rem;
+mat-error {
+    font-size: 1rem;
 }
-button{
+
+button {
     background-color: rgb(96, 98, 98);
     color: aliceblue;
-    border-radius:30px
+    border-radius: 30px
+}
+
+button:disabled {
+    background-color: gray;
+    opacity: 0.8;
+    color: white;
+    cursor: not-allowed;
+}
+
+mat-spinner {
+    width: 3em;
+    height: 3em;
+    border: 5px;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: rotation 1s linear infinite;
+    margin: 0 auto;
 }
 
 
-mat-card{
+mat-card {
     border-radius: 20px;
 }
-input{
+
+input {
     display: inline;
     place-items: center
 }
-

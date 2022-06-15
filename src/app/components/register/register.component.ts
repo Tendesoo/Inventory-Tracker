@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from 'src/app/services/services/api.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,12 +9,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
-
+  seeSpinner = false;
   reactiveForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder ,private api: ApiService , private router: Router) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) {
     this.reactiveForm = this.formBuilder.group({
       username: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
-      email: new FormControl('', [Validators.required,Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)]),
       cnfrmPassword: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(10)])
     }, {
@@ -38,15 +38,18 @@ export class RegisterComponent {
   }
 
   onSubmit() {
-    if (this.reactiveForm.valid){
-      this.api.post('Users',this.reactiveForm.value).subscribe((res) => {
+    if (this.reactiveForm.valid) {
+      this.api.post('Users', this.reactiveForm.value).subscribe((res) => {
         console.log(res)
         alert('Registered')
         this.reactiveForm.reset();
         this.router.navigate([''])
-       // location.href = '';
       })
     }
+    this.seeSpinner = true;
+    setTimeout(() => {
+      this.seeSpinner = false; 
+    } , 3000)
   }
-  
+
 }
