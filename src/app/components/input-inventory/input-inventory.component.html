@@ -1,6 +1,17 @@
-<app-layout></app-layout>
+<!-- 
+<mat-toolbar>
+  <div class="spacer"></div>
+  <mat-icon >notifications</mat-icon>
+  <button mat-icon-button>
+      <mat-icon href="" routerLink='' routerLinkActivate='activate'>logout</mat-icon>
+  </button>
+</mat-toolbar> -->
+
 <div class="img-fluid"></div>
-<div class="mask">
+<app-layout></app-layout>
+<div class="row">
+<div class="col-8 ">
+<div class="container-fluid">
 <mat-card-header style="margin-left: 30px;">
       <mat-card-title style="margin-left: 30px">Welcome to your Inventory tracker</mat-card-title>
       <br>
@@ -25,7 +36,10 @@
       <button type="submit" class="btn btn-primary" (click)="reset()">Reset</button>
     </form>
   </div>
+  </div>
 </div>
+</div>
+
 
 
 

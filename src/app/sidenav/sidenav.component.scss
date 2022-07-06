@@ -1,73 +1,133 @@
 
-.mat-sidenav{
+// .mat-sidenav{
+//     height: 100%;
+//     width:100%;
+//     border-right:none;
+//     background:grey;
+//     color: white;
+//     padding:16px;
+//     text-align:center;
+//     margin-top: -10px;
+// }
+ 
+// .menu-button {
+//     width:100%;
+//     display:flex;
+//     align-items: center;
+//     justify-content: flex-start;
+//     top: 1
+// }
+//     .mat-icon {
+//         margin-right: 8px;
+//         position: right;
+//     }
+
+//     .name{
+//         margin-top:8px;
+//         font-weight: normal;
+//     }
+//     .designation{
+//         margin-top:2px;
+//         font-size: 1.5rem;
+//         color: lightgrey
+//     }
+//     .avatar-mat-elevation-z8{
+//        shape-outside: circle;
+//     }
+//     .mat-divider {
+//         border-top-color: white;
+//       }
+//       .user-image-icon ml-1{
+//           shape-outside: circle();
+//       }
+      
+//     .img-circle{
+//         border-radius: 50px;
+//     }
+//     .sidenav {
+//         height: 100%; /* Full-height: remove this if you want "auto" height */
+//         width: 250px; /* Set the width of the sidebar */
+//         position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+//         z-index: 1; /* Stay on top */
+//         top: 0; /* Stay at the top */
+//         left: 0;
+//         background-color:grey;/* Black */
+        
+//       }
+//      header{
+//         padding:30px;
+//         text-decoration: none;
+//         font-size: 2.5rem;
+//         color: white;
+//         background-color: #004a9f;
+//         padding-top:-50px;
+//       }
+     
+//       .menu.button{
+//           width:100%;
+//           display:flex;
+//           justify-content: flex-start;
+//           align-items: center;
+//           font-size: 2.5rem;
+//       }
+     
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
     height: 100%;
-    width:100%;
+    overflow: auto;
+    height: 100%;
     border-right:none;
     background:grey;
     color: white;
     padding:16px;
     text-align:center;
     margin-top: -10px;
-}
- 
-.menu-button {
+  }
+  
+  .sidebar button {
+    display: block;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .sidebar button.menu-button {
+    color: white;
     width:100%;
-    display:flex;
-    align-items: center;
-    justify-content: flex-start;
-    top: 1
-}
-    .mat-icon {
-        margin-right: 8px;
-        position: right;
+     display:flex;
+     justify-content: flex-start;
+     align-items: center;
+    font-size: 1rem;
+  }
+  
+  .sidebar button:hover:not(.menu-button) {
+    background-color: #555;
+    color: white;
+  }
+  
+//   div.content {
+//     margin-left: 200px;
+//     padding: 1px 16px;
+//     height: 1000px;
+//   }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
     }
-
-    .name{
-        margin-top:8px;
-        font-weight: normal;
+    .sidebar button {float: left;}
+    
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar button {
+      text-align: center;
+      float: none;
     }
-    .designation{
-        margin-top:2px;
-        font-size: 1.5rem;
-        color: lightgrey
-    }
-    .avatar-mat-elevation-z8{
-       shape-outside: circle;
-    }
-    .mat-divider {
-        border-top-color: white;
-      }
-      .user-image-icon ml-1{
-          shape-outside: circle();
-      }
-      
-    .img-circle{
-        border-radius: 50px;
-    }
-    .sidenav {
-        height: 100%; /* Full-height: remove this if you want "auto" height */
-        width: 250px; /* Set the width of the sidebar */
-        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-        z-index: 1; /* Stay on top */
-        top: 0; /* Stay at the top */
-        left: 0;
-        background-color:grey;/* Black */
-        
-      }
-     header{
-        padding:30px;
-        text-decoration: none;
-        font-size: 2.5rem;
-        color: white;
-        background-color: #004a9f;
-        padding-top:-50px;
-      }
-     
-      .menu.button{
-          width:100%;
-          display:flex;
-          justify-content: flex-start;
-          align-items: center;
-          font-size: 2.5rem;
-      }
-     
+  }

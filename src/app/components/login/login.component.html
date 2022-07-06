@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <div class="svg-top">
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="1337" 
    width="1337">
@@ -29,15 +30,17 @@
     </g>
   </svg>
   </div>
+</div>
+
   
-  <section class="container">
-    <section class="wrapper">
+  <div class="container">
+    <div class="wrapper">
 <div class="bg-text">
       <mat-card-header>
         <mat-card-title>Welcome back!</mat-card-title>
         <p>Please enter your login details</p>
       </mat-card-header>
-      <section class="main-content">
+      <div class="main-content">
    
         <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginSubmit()" >
        <table class="example-full-width" cellspacing="2">
@@ -59,12 +62,12 @@
      <mat-spinner *ngIf="showSpinner" [diameter]="30"></mat-spinner>
      <button [disabled]="loginForm.invalid">Login</button>
      </form>
-    </section>
+    </div>
 </div>
 <footer>
   <p><a href="" title="Forgot Password">Forgot Password?</a></p>
   <p><a (click)=" gotToSignup()">Register</a></p>
 </footer>
 
-    </section>
-    </section>
+</div>
+  </div>
